@@ -1,15 +1,22 @@
 package com.ecommerce;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
+	private static List<Product> productList = new ArrayList<>();
+	
+	private static int nextProductId = 1;
 	private int productID;
 	private String name;
 	private double price;
 	
 	// Constructor
-	public Product(int productID, String name, double price) {
-		this.productID = productID;
+	public Product(String name, double price) {
+		this.productID = nextProductId++;
 		this.name = name;
 		this.price = price;
+		productList.add(this);
 	}
 	
 	// Getters
@@ -25,6 +32,10 @@ public class Product {
 		return price;
 	}
 	
+	public List<Product> getProductList() {
+		return productList;
+	}
+	
 	// Setters
 	public void setProductID(int productID) {
 		this.productID = productID;
@@ -36,5 +47,25 @@ public class Product {
 	
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	// Utility methods
+	public static void displayProducts() {
+		System.out.println("Products:");
+		for (Product product : productList) {
+			System.out.println("Product ID: " + product.getProductID());
+			System.out.println("Name: " + product.getName());
+			System.out.println("Price: $" + product.getPrice());
+			System.out.println();
+		}
+	}
+	
+	public static Product getProductById(int id) {
+		for (Product product : productList) {
+			if (product.getProductID() == id) {
+				return product;
+			}
+		}
+		return null;
 	}
 }

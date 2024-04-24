@@ -1,9 +1,13 @@
 package com.ecommerce.orders;
 
 import java.util.ArrayList;
+import java.util.List;
 import com.ecommerce.*;
 
 public class Order {
+	private static List<Order> orderList = new ArrayList<>();
+	
+	private static int nextOrderId = 1;
 	private int orderID;
 	private Customer customer;
 	private ArrayList<Product> products;
@@ -11,8 +15,8 @@ public class Order {
 	private String orderStatus;
 
 	// Constructor
-	public Order(int orderID, Customer customer) {
-		this.orderID = orderID;
+	public Order(Customer customer) {
+		this.orderID = nextOrderId++;
 		this.customer = customer;
 		this.products = new ArrayList<>();
 		this.orderTotal = 0.0;
