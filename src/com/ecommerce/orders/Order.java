@@ -91,4 +91,10 @@ public class Order {
 		
 		return summary.toString();
 	}
+	
+	public void displayOrders() {
+		for (Order order : orderList) {
+			System.out.print(order.generateOrderSummary());
+		}
+	}
 }

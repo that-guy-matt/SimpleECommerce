@@ -64,17 +64,21 @@ public class MenuSystem {
 				break;
 				
 			case 5:
-				System.out.print(order.generateOrderSummary());
+				order.displayOrders();
 				break;
 				
 			case 6:
-				// place order
-				// create new instance of order for this customer
-				break;
+				order.setOrderStatus("Placed");
+				System.out.println("Order successfully placed. You may start a new order.\n");
+				customer.emptyCart();
+				Order newOrder = new Order(customer);
+				MenuSystem newMenu = new MenuSystem(customer, newOrder);
+				newMenu.displayMenu();
 				
 			case 7:
 				System.out.println("Exiting application...");
 				System.exit(0);
+				
 			default:
 				System.out.println("Invalid choice. Please enter a single digit.");
 			}
