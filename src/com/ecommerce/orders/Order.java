@@ -94,7 +94,8 @@ public class Order {
 		for (Product product : products) {
 			summary.append("- ").append(product.getName()).append(": $").append(product.getPrice()).append("\n");
 		}
-		summary.append("Order Total: $").append(orderTotal).append("\n");
+		String formattedTotal = String.format("%.2f", orderTotal);
+		summary.append("Order Total: $").append(formattedTotal).append("\n");
 		summary.append("Order status: ").append(orderStatus).append("\n\n");
 		
 		return summary.toString();
