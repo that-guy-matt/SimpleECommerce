@@ -2,6 +2,7 @@ package com.ecommerce;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.ecommerce.orders.Order;
 
 public class Customer {
 	private static List<Customer> customerList = new ArrayList<>();
@@ -68,5 +69,11 @@ public class Customer {
 	    }
 	}
 	
-	
+	// TODO remove if not used
+//	public void generateOrder() {
+//		Order order = new Order(this);
+//		for (Product product : shoppingCart) {
+//			order.addProduct(product);			
+//		}
+//	}
 }

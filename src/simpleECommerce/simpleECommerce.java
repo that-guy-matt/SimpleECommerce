@@ -26,7 +26,8 @@ public class simpleECommerce {
 		System.out.print("What is your name: ");
 		String customerName = TextIO.getlnString();
 		Customer customer = new Customer(customerName);
-		MenuSystem menuSystem = new MenuSystem(customer);
+		Order order = new Order(customer);
+		MenuSystem menuSystem = new MenuSystem(customer, order);
 		
 		menuSystem.displayMenu();
 	}

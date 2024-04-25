@@ -2,14 +2,17 @@ package com.ecommerce;
 
 import com.ecommerce.Customer;
 import com.ecommerce.Product;
+import com.ecommerce.orders.Order;
 import textio.TextIO;
 
 public class MenuSystem {
 	
 	private Customer customer;
+	private Order order;
 	
-	public MenuSystem(Customer customer) {
+	public MenuSystem(Customer customer, Order order) {
 		this.customer = customer;
+		this.order = order;
 	}
 	
 	public void displayMenu() {
@@ -37,6 +40,7 @@ public class MenuSystem {
 				choice = TextIO.getInt();
 				if (Product.productExists(choice) != false) {
 					customer.addToCart(Product.getProductById(choice));
+					order.addProduct(Product.getProductById(choice));
 					System.out.println("Added " + Product.getProductById(choice).getName() + " to cart.\n");
 				} else {
 					System.out.println("That product doesn't seem to exist. Try again.\n");
@@ -48,6 +52,7 @@ public class MenuSystem {
 				choice = TextIO.getInt();
 				if (customer.isProductInCart(choice) != false) {
 					customer.removeFromCart(Product.getProductById(choice));
+					order.removeProduct(Product.getProductById(choice));
 					System.out.println("removed " + Product.getProductById(choice).getName() + " from cart.\n");
 				} else {
 					System.out.println("That product isn't in your cart.\n");
@@ -59,9 +64,12 @@ public class MenuSystem {
 				break;
 				
 			case 5:
+				System.out.print(order.generateOrderSummary());
 				break;
 				
 			case 6:
+				// place order
+				// create new instance of order for this customer
 				break;
 				
 			case 7:

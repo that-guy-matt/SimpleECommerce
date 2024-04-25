@@ -79,14 +79,14 @@ public class Order {
 	
 	public String generateOrderSummary() {
 		StringBuilder summary = new StringBuilder();
-		summary.append("Order ID: ").append(orderID).append("\n");
+		summary.append("\nOrder ID: ").append(orderID).append("\n");
 		summary.append("Customer: ").append(customer.getName()).append("\n");
 		summary.append("Products: \n");
 		for (Product product : products) {
 			summary.append("- ").append(product.getName()).append(": $").append(product.getPrice()).append("\n");
 		}
 		summary.append("Order Total: $").append(orderTotal).append("\n");
-		summary.append("Order status: ").append(orderStatus).append("\n");
+		summary.append("Order status: ").append(orderStatus).append("\n\n");
 		
 		return summary.toString();
 	}
