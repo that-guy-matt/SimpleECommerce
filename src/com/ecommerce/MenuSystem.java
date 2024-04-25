@@ -31,23 +31,39 @@ public class MenuSystem {
 			case 1:
 				Product.displayProducts();
 				break;
+				
 			case 2:
 				System.out.print("Please enter product ID number that you would like to add: ");
 				choice = TextIO.getInt();
-				if (Product.productExists(choice) != null) {
+				if (Product.productExists(choice) != false) {
 					customer.addToCart(Product.getProductById(choice));
 					System.out.println("Added " + Product.getProductById(choice).getName() + " to cart.\n");
+				} else {
+					System.out.println("That product doesn't seem to exist. Try again.\n");
 				}
-			
-				
 				break;
+				
+			case 3:
+				System.out.print("Please enter product ID number that you would like to remove: ");
+				choice = TextIO.getInt();
+				if (customer.isProductInCart(choice) != false) {
+					customer.removeFromCart(Product.getProductById(choice));
+					System.out.println("removed " + Product.getProductById(choice).getName() + " from cart.\n");
+				} else {
+					System.out.println("That product isn't in your cart.\n");
+				}
+				break;
+				
 			case 4:
 				customer.displayCart();
 				break;
+				
 			case 5:
 				break;
+				
 			case 6:
 				break;
+				
 			case 7:
 				System.out.println("Exiting application...");
 				System.exit(0);

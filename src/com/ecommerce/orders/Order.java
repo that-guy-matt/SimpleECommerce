@@ -75,6 +75,7 @@ public class Order {
 		products.remove(product);
 		orderTotal -= product.getPrice();
 	}
+
 	
 	public String generateOrderSummary() {
 		StringBuilder summary = new StringBuilder();

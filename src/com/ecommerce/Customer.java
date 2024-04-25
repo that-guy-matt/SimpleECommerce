@@ -50,6 +50,14 @@ public class Customer {
 		shoppingCart.remove(customerID);
 	}
 	
+	public boolean isProductInCart(int id) {
+		if (Product.getProductById(id) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public void displayCart() {
 		System.out.println("\nCart:");
 		for (Product product : shoppingCart) {
@@ -59,4 +67,6 @@ public class Customer {
 	        System.out.println();
 	    }
 	}
+	
+	
 }

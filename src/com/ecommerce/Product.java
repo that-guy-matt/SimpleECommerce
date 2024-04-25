@@ -69,13 +69,11 @@ public class Product {
 		return null;
 	}
 	
-	public static Product productExists(int id) {
-		Product product = Product.getProductById(id);
-		if (product != null) {
-			return product;			
+	public static boolean productExists(int id) {
+		if (Product.getProductById(id) != null) {
+			return true;			
 		} else {
-			System.out.println("That product doesn't seem to exist. Try again.\n");
-			return null;
+			return false;
 		}
 	}
 }
