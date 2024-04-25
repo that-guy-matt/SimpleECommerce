@@ -34,13 +34,12 @@ public class MenuSystem {
 			case 2:
 				System.out.print("Please enter product ID number that you would like to add: ");
 				choice = TextIO.getInt();
-				Product productToAdd = Product.getProductById(choice);
-				if (productToAdd != null) {
-					customer.addToCart(productToAdd);
-					System.out.println("Added " + productToAdd.getName() + " to cart.\n");
-				} else {
-					System.out.println("That product doesn't seem to exist. Try again.\n");
+				if (Product.checkIfProductExists(choice) != null) {
+					customer.addToCart(Product.getProductById(choice));
+					System.out.println("Added " + Product.getProductById(choice).getName() + " to cart.\n");
 				}
+			
+				
 				break;
 			case 4:
 				customer.displayCart();

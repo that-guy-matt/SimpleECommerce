@@ -51,7 +51,7 @@ public class Customer {
 	}
 	
 	public void displayCart() {
-		System.out.println("Cart:");
+		System.out.println("\nCart:");
 		for (Product product : shoppingCart) {
 	        System.out.println("Product ID: " + product.getProductID());
 	        System.out.println("Name: " + product.getName());
