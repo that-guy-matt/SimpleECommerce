@@ -39,7 +39,7 @@ public class MenuSystem {
 					customer.addToCart(productToAdd);
 					System.out.println("Added " + productToAdd.getName() + " to cart.\n");
 				} else {
-					System.out.println("That product doesn't seem to exist. Try again.");
+					System.out.println("That product doesn't seem to exist. Try again.\n");
 				}
 				break;
 			case 4:
