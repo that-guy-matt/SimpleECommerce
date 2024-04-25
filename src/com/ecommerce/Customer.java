@@ -3,6 +3,10 @@ package com.ecommerce;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Customer class represents a customer in the e-commerce system.
+ * Each customer has a unique ID, a name, and a shopping cart where they can add and remove products.
+ */
 public class Customer {
 	private static List<Customer> customerList = new ArrayList<>();
 	
@@ -50,6 +54,12 @@ public class Customer {
 		shoppingCart.remove(customerID);
 	}
 	
+	/**
+     * Checks if a product with the given ID is present in the customer's shopping cart.
+     * 
+     * @param id The ID of the product to be checked.
+     * @return true if the product is present in the shopping cart, false otherwise.
+     */
 	public boolean isProductInCart(int id) {
 		if (Product.getProductById(id) != null) {
 			return true;
@@ -58,6 +68,9 @@ public class Customer {
 		}
 	}
 	
+	/**
+     * Displays the contents of the customer's shopping cart.
+     */
 	public void displayCart() {
 		System.out.println("\nCart:");
 		for (Product product : shoppingCart) {
@@ -68,6 +81,9 @@ public class Customer {
 	    }
 	}
 	
+	/**
+     * Empties the customer's shopping cart by removing all products.
+     */
 	public void emptyCart() {
 		shoppingCart.clear();
 	}

@@ -1,10 +1,12 @@
 package com.ecommerce;
 
-import com.ecommerce.Customer;
-import com.ecommerce.Product;
 import com.ecommerce.orders.Order;
 import textio.TextIO;
 
+/**
+ * The MenuSystem class represents the menu system of the e-commerce application.
+ * It allows customers to interact with products, add or remove them from the cart, view the cart, and place orders.
+ */
 public class MenuSystem {
 	
 	private Customer customer;
@@ -15,6 +17,10 @@ public class MenuSystem {
 		this.order = order;
 	}
 	
+	/**
+     * Displays the main menu of the e-commerce application.
+     * Allows customers to choose from various options such as viewing products, adding/removing products from the cart, and placing orders.
+     */
 	public void displayMenu() {
 		
 		int choice;
@@ -85,7 +91,5 @@ public class MenuSystem {
 		} while (choice != 7);
 		
 	}
-	
-	// Utility methods
 
 }

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import com.ecommerce.*;
 
+/**
+ * The Order class represents an order created by a customer.
+ * Each order has a unique ID, a customer, a list of products, a total amount, and a status.
+ */
 public class Order {
 	private static List<Order> orderList = new ArrayList<>();
 	
@@ -77,7 +81,11 @@ public class Order {
 		orderTotal -= product.getPrice();
 	}
 
-	
+	/**
+     * Generates a summary of the order, including order ID, customer name, products, total amount, and status.
+     * 
+     * @return A string containing the order summary.
+     */
 	public String generateOrderSummary() {
 		StringBuilder summary = new StringBuilder();
 		summary.append("\nOrder ID: ").append(orderID).append("\n");
@@ -92,6 +100,9 @@ public class Order {
 		return summary.toString();
 	}
 	
+	/**
+     * Displays all orders in the order list.
+     */
 	public void displayOrders() {
 		for (Order order : orderList) {
 			System.out.print(order.generateOrderSummary());

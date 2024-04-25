@@ -3,6 +3,10 @@ package com.ecommerce;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Product class represents a product available for purchase in the e-commerce system.
+ * Each product has a unique ID, a name, and a price.
+ */
 public class Product {
 	private static List<Product> productList = new ArrayList<>();
 	
@@ -49,7 +53,9 @@ public class Product {
 		this.price = price;
 	}
 	
-	// Utility methods
+	/**
+     * Displays the details of all available products.
+     */
 	public static void displayProducts() {
 		System.out.println("Products:");
 		for (Product product : productList) {
@@ -60,6 +66,12 @@ public class Product {
 		}
 	}
 	
+	/**
+     * Returns the product with the specified ID.
+     * 
+     * @param id The ID of the product to be retrieved.
+     * @return The product with the specified ID, or null if not found.
+     */
 	public static Product getProductById(int id) {
 		for (Product product : productList) {
 			if (product.getProductID() == id) {
@@ -69,6 +81,12 @@ public class Product {
 		return null;
 	}
 	
+	/**
+     * Checks if a product with the specified ID exists.
+     * 
+     * @param id The ID of the product to be checked.
+     * @return true if the product exists, false otherwise.
+     */
 	public static boolean productExists(int id) {
 		if (Product.getProductById(id) != null) {
 			return true;			

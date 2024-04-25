@@ -6,7 +6,18 @@ import com.ecommerce.Customer;
 import com.ecommerce.MenuSystem;
 import com.ecommerce.orders.Order;
 
+/**
+* The simpleECommerce class represents a simple e-commerce application.
+* It allows customers to interact with the system by browsing products,
+* adding them to their cart, and placing orders.
+*/
 public class simpleECommerce {
+
+/**
+ * The main method of the e-commerce application.
+ * It creates sample products, initializes a customer, an order, and a menu system,
+ * and then displays the main menu for the customer.
+ */
 	
 	public static void main(String[] args) {
 		
