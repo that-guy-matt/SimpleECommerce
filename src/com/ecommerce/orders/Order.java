@@ -21,6 +21,7 @@ public class Order {
 		this.products = new ArrayList<>();
 		this.orderTotal = 0.0;
 		this.orderStatus = "Pending";
+		orderList.add(this);
 	}
 	
 	// Getters
