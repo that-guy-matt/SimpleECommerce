@@ -69,7 +69,7 @@ public class Product {
 		return null;
 	}
 	
-	public static Product checkIfProductExists(int id) {
+	public static Product productExists(int id) {
 		Product product = Product.getProductById(id);
 		if (product != null) {
 			return product;			

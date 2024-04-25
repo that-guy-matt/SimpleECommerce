@@ -34,7 +34,7 @@ public class MenuSystem {
 			case 2:
 				System.out.print("Please enter product ID number that you would like to add: ");
 				choice = TextIO.getInt();
-				if (Product.checkIfProductExists(choice) != null) {
+				if (Product.productExists(choice) != null) {
 					customer.addToCart(Product.getProductById(choice));
 					System.out.println("Added " + Product.getProductById(choice).getName() + " to cart.\n");
 				}
